@@ -207,9 +207,16 @@
   .navtoggle{display:none;}
 
   .hero{
-    padding:96px 0 80px;
-    position:relative;
-    overflow:hidden;
+    position: relative;
+    width: 100%;
+    min-height: 85vh; /* Prevents it from taking up too much vertical space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover; /* Ensures the background image scales properly */
+    background-position: center;
+    padding: 40px 20px;
+    overflow: hidden;
   }
 
   .hero::before{
@@ -531,9 +538,9 @@
   }
 
   .alumni-strip{
-    display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));
-    gap:16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Forces a neat 2-column layout on mobile */
+    gap: 12px;
   }
 
   .alumni-item{
