@@ -232,10 +232,10 @@
   .hero-inner{position:relative; z-index:1; max-width:760px;}
 
   .hero-logo {
-    width: 100%;
-    max-width: 400px;
-    height: 260px;
-    object-fit: cover; /* Use 'contain' if you don't want any cropping */
+    width: min(100%, 400px);
+    height: auto;
+    max-height: 260px;
+    object-fit: contain;
     object-position: center;
     margin-bottom: 32px;
   }
@@ -660,6 +660,40 @@
   } 
 
   @media (max-width:760px){
+    .wrap {
+    padding: 0 20px;
+  }
+
+    .hero {
+      padding: 55px 0 50px;
+    }
+
+    .hero-logo {
+      width: min(85vw, 320px);
+      height: auto;
+      max-height: 190px;
+      object-fit: contain;
+      margin: 0 auto 28px;
+    }
+
+    section {
+      min-height: auto;
+      padding: 60px 0;
+    }
+
+    .flip-card-inner {
+      height: 240px;
+    }
+
+    .team-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      height: 60px;
+      max-width: 100%;
+    }
     .navlinks{
       position:fixed;
       top:76px; left:0; right:0;
