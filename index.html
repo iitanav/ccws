@@ -42,7 +42,11 @@
 
   a{color:inherit; text-decoration:none;}
 
-  img{max-width:100%; display:block;}
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
 
   /* --- Background Sliding System --- */
   #bg-container {
@@ -221,11 +225,11 @@
   .hero-inner{position:relative; z-index:1; max-width:760px;}
 
   .hero-logo {
-    height: 260px;
     width: 100%;
     max-width: 400px;
-    object-fit: cover; /* Crops the edges of the image to fill the box */
-    object-position: center; /* Focuses on the center of the logo */
+    height: 260px;
+    object-fit: cover; /* Use 'contain' if you don't want any cropping */
+    object-position: center;
     margin-bottom: 32px;
   }
 
@@ -380,9 +384,10 @@
   }
 
   .team-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(210px, 1fr));
-    gap:28px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 28px;
+    width: 100%;
   }
 
   .flip-card{
