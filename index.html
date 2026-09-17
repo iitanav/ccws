@@ -86,8 +86,6 @@
     max-width:var(--maxw);
     margin:0 auto;
     padding:0 32px;
-    width:100%;
-    box-sizing:border-box;
   }
 
   header{
@@ -650,105 +648,17 @@
     object-fit:contain;
   } 
 
-  /* Global mobile guard: never allow horizontal scroll */
-  html, body{
-    overflow-x:hidden;
-    max-width:100%;
-  }
-
   @media (max-width:760px){
-    .wrap{
-      padding:0 20px;
-    }
-    .hero{
-      padding:56px 0 48px;
-    }
-    .hero-logo{
-      height:auto;
-      max-width:220px;
-      margin-bottom:22px;
-    }
-    .hero h1{
-      font-size:clamp(2rem, 8vw, 2.6rem);
-    }
-    .hero p.lede{
-      font-size:1rem;
-    }
-    .hero-actions{
-      flex-direction:column;
-      align-items:stretch;
-    }
-    .hero-actions .btn{
-      text-align:center;
-    }
-    section{
-      min-height:auto;
-      padding:56px 0;
-    }
-    .section-head{
-      flex-direction:column;
-      align-items:flex-start;
-      gap:12px;
-      margin-bottom:32px;
-    }
-    .section-note{
-      max-width:100%;
-    }
-    nav.wrap{
-      height:64px;
-    }
-    .brand{
-      font-size:1rem;
-    }
-    .brand .mark{
-      width:40px;
-      height:34px;
-    }
-    .team-grid{
-      grid-template-columns:repeat(auto-fill, minmax(140px, 1fr));
-      gap:16px;
-    }
-    .flip-card-inner{
-      height:220px;
-    }
-    .flip-card-front, .flip-card-back{
-      padding:18px 14px;
-    }
-    .flip-card.flipped{
-      transform:scale(1.05);
-    }
-    .alumni-strip{
-      grid-template-columns:repeat(auto-fill, minmax(130px, 1fr));
-      gap:12px;
-    }
-    .modal-panel{
-      padding:28px 20px;
-      max-height:85vh;
-    }
-    .modal-close{
-      top:12px;
-      right:12px;
-    }
-    .footer-inner{
-      flex-direction:column;
-      align-items:flex-start;
-      text-align:left;
-    }
-    .footer-logo{
-      height:56px;
-    }
     .navlinks{
       position:fixed;
-      top:64px; left:0; right:0;
+      top:76px; left:0; right:0;
       background:var(--bg);
       flex-direction:column;
-      padding:24px 20px;
+      padding:24px 32px;
       border-bottom:1px solid var(--line);
       gap:20px;
       transform:translateY(-140%);
       transition:transform 0.25s ease;
-      max-height:calc(100vh - 64px);
-      overflow-y:auto;
     }
     .navlinks.open{transform:translateY(0);}
     .navtoggle{
@@ -787,27 +697,6 @@
     #contact{
       min-height:auto;
       padding:64px 0;
-    }
-  }
-
-  @media (max-width:400px){
-    .wrap{
-      padding:0 14px;
-    }
-    .hero-logo{
-      max-width:170px;
-    }
-    .team-grid{
-      grid-template-columns:repeat(auto-fill, minmax(120px, 1fr));
-    }
-    .alumni-strip{
-      grid-template-columns:1fr 1fr;
-    }
-    .modal-panel{
-      padding:22px 16px;
-    }
-    .pillar{
-      gap:12px;
     }
   }
 
@@ -872,7 +761,7 @@
   .nav-btn {
     color: #ffffff !important;
     background-color: var(--purple-deep);
-    padding: 10px 20px;
+    padding: 200px 365px;
     min-width: 80px !important;
     font-size: 0.90rem;
     border-radius: 10px;
@@ -885,6 +774,204 @@
     background-color: var(--purple);
     color: #ffffff !important;
   }
+
+
+/* ===== Mobile / phone optimization ===== */
+@media (max-width: 760px) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  nav.wrap {
+    height: 64px;
+  }
+
+  header {
+    width: 100%;
+  }
+
+  .brand {
+    min-width: 0;
+    font-size: 1rem;
+  }
+
+  .brand .mark {
+    width: 44px;
+    height: 38px;
+    flex-shrink: 0;
+  }
+
+  .navlinks {
+    top: 64px;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .hero {
+    padding: 56px 0 48px;
+  }
+
+  .hero-inner {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-logo {
+    display: block;
+    width: min(100%, 300px);
+    height: auto;
+    max-height: 190px;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+    overflow-wrap: anywhere;
+  }
+
+  .hero p.lede {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  section {
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+  .section-head {
+    margin-bottom: 32px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .flip-card-inner {
+    height: 250px;
+  }
+
+  /* Prevent the flipped cards from becoming wider than the phone. */
+  .flip-card.flipped {
+    transform: none;
+  }
+
+  .flip-card.flipped:hover {
+    transform: none;
+  }
+
+  .alumni-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .contact-panel {
+    width: 100%;
+    max-width: 100%;
+    padding: 30px 20px;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    border-radius: 16px;
+  }
+
+  .contact-list li {
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .contact-list .label {
+    min-width: 0;
+  }
+
+  footer .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-logo {
+    height: 60px;
+    max-width: 100%;
+  }
+
+  .modal-overlay {
+    padding: 14px;
+  }
+
+  .modal-panel {
+    width: 100%;
+    max-width: 100%;
+    max-height: 88vh;
+    padding: 32px 20px;
+    border-radius: 16px;
+  }
+
+  /* The original nav button had extremely large padding, which caused
+     horizontal overflow on small screens. */
+  .nav-btn {
+    padding: 12px 18px !important;
+    min-width: 0 !important;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .wrap {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero {
+    padding-top: 44px;
+  }
+
+  .hero-logo {
+    width: min(100%, 250px);
+    max-height: 160px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .alumni-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .flip-card-inner {
+    height: 235px;
+  }
+}
 
 </style>
 </head>
